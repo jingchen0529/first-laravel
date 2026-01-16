@@ -1,30 +1,13 @@
 <script setup lang="ts">
 import NavMain from '@/components/custom/NavMain.vue';
-import NavProjectMembers from '@/components/custom/NavProjectMembers.vue';
-import NavSecondary from '@/components/custom/NavSecondary.vue';
 import NavUser from '@/components/custom/NavUser.vue';
-import ProjectSwitcher from '@/components/custom/ProjectSwitcher.vue';
 import {
     Sidebar,
     SidebarContent,
     SidebarFooter,
     SidebarHeader,
 } from '@/components/ui/sidebar';
-import { LayoutDashboard, LifeBuoy, Send, Shell } from 'lucide-vue-next';
-
-interface Project {
-    logo: any;
-    title: string;
-    subtitle: string;
-}
-
-const projects: Project[] = [
-    {
-        logo: Shell,
-        title: '启动模板',
-        subtitle: 'Vue - Inertia - Laravel',
-    },
-];
+import { LayoutDashboard, Users, Shell } from 'lucide-vue-next';
 
 interface MainNavigationItem {
     title: string;
@@ -42,48 +25,10 @@ const navMain: MainNavigationItem[] = [
         url: '/dashboard',
         icon: LayoutDashboard,
     },
-];
-
-interface SecondaryNavigationItem {
-    title: string;
-    url: string;
-    icon: any;
-}
-
-const navSecondary: SecondaryNavigationItem[] = [
     {
-        title: '支持',
-        url: '/dashboard',
-        icon: LifeBuoy,
-    },
-    {
-        title: '反馈',
-        url: '/dashboard',
-        icon: Send,
-    },
-];
-
-interface ProjectMember {
-    name: string;
-    url: string;
-    isConnected: boolean;
-}
-
-const projectMembers: ProjectMember[] = [
-    {
-        name: 'Tylor Otwell',
-        url: '#',
-        isConnected: true,
-    },
-    {
-        name: 'Jonathan Reinink',
-        url: '#',
-        isConnected: false,
-    },
-    {
-        name: 'Adam Wathan',
-        url: '#',
-        isConnected: false,
+        title: '用户管理',
+        url: '/user',
+        icon: Users,
     },
 ];
 </script>
@@ -91,12 +36,13 @@ const projectMembers: ProjectMember[] = [
 <template>
     <Sidebar variant="inset" collapsible="icon">
         <SidebarHeader>
-            <ProjectSwitcher :projects="projects" />
+            <div class="flex items-center gap-2 px-2 py-1">
+                <Shell class="size-5" />
+                <span class="font-semibold truncate group-data-[collapsible=icon]:hidden">启动模板</span>
+            </div>
         </SidebarHeader>
         <SidebarContent>
             <NavMain :items="navMain" />
-            <NavProjectMembers :members="projectMembers" />
-            <NavSecondary :items="navSecondary" class="mt-auto" />
         </SidebarContent>
         <SidebarFooter>
             <NavUser />

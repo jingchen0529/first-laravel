@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Account;
 
-use App\Http\Controllers\Admin\Controller;
+use Illuminate\Routing\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Session;
 use Illuminate\Http\RedirectResponse;
