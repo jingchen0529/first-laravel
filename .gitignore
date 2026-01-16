@@ -28,3 +28,14 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+node_modules
+
+# Additional common ignores
+/.phpunit.cache
+/bootstrap/ssr
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+.windsurfrules
