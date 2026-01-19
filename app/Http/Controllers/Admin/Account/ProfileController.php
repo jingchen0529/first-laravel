@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Account;
 
-use App\Http\Controllers\Admin\Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

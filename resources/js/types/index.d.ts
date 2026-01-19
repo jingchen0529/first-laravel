@@ -11,6 +11,13 @@ declare global {
             two_factor_confirmed_at: string | null;
         }
 
+        interface Flash {
+            success?: string;
+            error?: string;
+            warning?: string;
+            info?: string;
+        }
+
         interface PageProps<
             T extends Record<string, unknown> = Record<string, unknown>,
         > extends T {
@@ -18,6 +25,7 @@ declare global {
                 user: User;
             };
             ziggy: Config & { location: string };
+            flash: Flash;
         }
     }
 }

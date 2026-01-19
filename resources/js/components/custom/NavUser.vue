@@ -24,12 +24,10 @@ import {
     BadgeCheck,
     Bell,
     ChevronsUpDown,
-    CreditCard,
     Lock,
     LogOut,
     Moon,
     PaintRoller,
-    Sparkles,
     Sun,
 } from 'lucide-vue-next';
 import { computed } from 'vue';
@@ -107,13 +105,6 @@ const mode = useColorMode();
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
-                        <DropdownMenuItem disabled>
-                            <Sparkles />
-                            升级到专业版
-                        </DropdownMenuItem>
-                    </DropdownMenuGroup>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuGroup>
                         <DropdownMenuItem as-child>
                             <Link :href="route('profile.show')">
                                 <BadgeCheck />
@@ -126,13 +117,11 @@ const mode = useColorMode();
                                 安全设置
                             </Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <CreditCard />
-                            账单
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <Bell />
-                            通知
+                        <DropdownMenuItem as-child>
+                            <Link href="/account/notification">
+                                <Bell />
+                                通知中心
+                            </Link>
                         </DropdownMenuItem>
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger class="gap-2">

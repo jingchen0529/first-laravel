@@ -37,7 +37,7 @@ defineProps<Props>();
 
 <template>
     <SidebarGroup>
-        <SidebarGroupLabel>平台</SidebarGroupLabel>
+        <!-- <SidebarGroupLabel>平台</SidebarGroupLabel> -->
         <SidebarMenu>
             <template v-for="mainItem in items" :key="mainItem.url">
                 <Collapsible :defaultOpen="false" class="group/collapsible">
