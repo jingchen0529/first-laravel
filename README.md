@@ -236,7 +236,7 @@ Notification::sendToAll('System Announcement', 'Content', 'success');
 
 ## 📄 License
 
-MIT
+MIT Apache
 
 ## 🤝 Contributing
 
